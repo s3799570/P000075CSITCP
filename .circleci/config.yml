@@ -8,7 +8,7 @@ jobs:
       - checkout
       - aws-cli/setup:
           profile-name: example
-      - run: echo "Run your code here"
+      - run: pwd
 workflows:
   aws-cli:
     jobs:
