@@ -28,11 +28,17 @@ jobs:
           name: Configure AWS default region
       - run: aws configure list
       - run: cd deployment && chmod +x ./build-s3-dist.sh
+          name: Prepare build script
       - run: cd deployment && ./build-s3-dist.sh rmitbot$CIRCLE_BUILD_NUM rmitbot$CIRCLE_BUILD_NUM 0.0.$CIRCLE_BUILD_NUM
+          name: Build solution
       - run: aws s3 mb s3://rmitbot$CIRCLE_BUILD_NUM --region ap-southeast-2
-      - run: aws s3 mb s3://rmitbot$CIRCLE_BUILD_NUM-ap-southeast-2 --ap-southeast-2
+          name: Create S3 bucket 1
+      - run: aws s3 mb s3://rmitbot$CIRCLE_BUILD_NUM-ap-southeast-2 --region --ap-southeast-2
+          name: Create S3 bucket 2
       - run: aws s3 sync ./deployment/global-s3-assets s3://rmitbot$CIRCLE_BUILD_NUMM/rmitbot$CIRCLE_BUILD_NUM/0.0.$CIRCLE_BUILD_NUM --acl bucket-owner-full-control
+          name: Transfer global build assets to S3 bucket 1
       - run: aws s3 sync ./deployment/regional-s3-assets s3://rmitbot$CIRCLE_BUILD_NUM-us-east-1/rmitbot$CIRCLE_BUILD_NUM/0.0.$CIRCLE_BUILD_NUM --acl bucket-owner-full-control
+          name: Transfer regional build assets to S3 bucket 2
 workflows:
   aws-cli:
     jobs:
