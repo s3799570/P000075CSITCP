@@ -41,7 +41,7 @@ jobs:
           name: Create S3 bucket 1
       - run:  
           command: | 
-            aws s3 mb s3://rmitbot$CIRCLE_BUILD_NUM-ap-southeast-2 --region --ap-southeast-2
+            aws s3 mb s3://rmitbot$CIRCLE_BUILD_NUM-ap-southeast-2 --region ap-southeast-2
           name: Create S3 bucket 2
       - run:  
           command: | 
