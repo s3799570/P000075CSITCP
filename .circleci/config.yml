@@ -9,6 +9,10 @@ jobs:
       - aws-cli/setup:
           profile-name: example
       - run: pwd
+      - run: ls
+      - run: cd ..
+      - run: ls
+      - run: pwd
 workflows:
   aws-cli:
     jobs:
