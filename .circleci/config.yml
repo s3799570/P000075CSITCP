@@ -2,7 +2,7 @@ version: '2.1'
 orbs:
   aws-cli: circleci/aws-cli@3.1
 jobs:
-  aws-cli-example:
+  aws-cli-build:
     executor: aws-cli/default
     working_directory: ~/deployment
     steps:
@@ -54,5 +54,5 @@ jobs:
 workflows:
   aws-cli:
     jobs:
-      - aws-cli-example:
+      - aws-cli-build:
           context: aws
