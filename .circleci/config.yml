@@ -10,22 +10,22 @@ jobs:
       - aws-cli/setup:
           profile-name: $PARAM_AWS_CLI_PROFILE_NAME
       - run:
-      command: |
-        aws configure set aws_access_key_id \
-        $PARAM_AWS_CLI_ACCESS_KEY_ID \
-        --profile $PARAM_AWS_CLI_PROFILE_NAME
+        command: |
+          aws configure set aws_access_key_id \
+          $PARAM_AWS_CLI_ACCESS_KEY_ID \
+          --profile $PARAM_AWS_CLI_PROFILE_NAME
+          name: Configure AWS Access Key id
       - run:
-      command: |
-        aws configure set aws_secret_access_key \
-        $PARAM_AWS_CLI_SECRET_ACCESS_KEY \
-        --profile $PARAM_AWS_CLI_PROFILE_NAME
-      name: Configure AWS Secret Access Key
+        command: |
+          aws configure set aws_secret_access_key \
+          $PARAM_AWS_CLI_SECRET_ACCESS_KEY \
+          --profile $PARAM_AWS_CLI_PROFILE_NAME
+        name: Configure AWS Secret Access Key
       - run:
-      command: |
-        aws configure set region $PARAM_AWS_CLI_REGION \
-        --profile $PARAM_AWS_CLI_PROFILE_NAME
-         name: Configure AWS default region          
-      name: Configure AWS Access Key ID
+        command: |
+          aws configure set region $PARAM_AWS_CLI_REGION \
+          --profile $PARAM_AWS_CLI_PROFILE_NAME
+           name: Configure AWS default region
       - run: aws configure list
       - run: cd deployment && chmod +x ./build-s3-dist.sh
       - run: cd deployment && ./build-s3-dist.sh $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM
