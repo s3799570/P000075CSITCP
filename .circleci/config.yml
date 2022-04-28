@@ -13,8 +13,8 @@ jobs:
       - run: cd deployment
       - run: ls -r
       - run: pwd
-      - run: chmod +x ./build-s3-dist.sh
-      - run: ./build-s3-dist.sh $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM
+      - run: chmod +x deployment/build-s3-dist.sh
+      - run: deployment/build-s3-dist.sh $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM
 workflows:
   aws-cli:
     jobs:
