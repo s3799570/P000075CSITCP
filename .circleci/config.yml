@@ -55,7 +55,7 @@ jobs:
           command: | 
             aws cloudformation create-stack \
             --stack-name rmitbot$CIRCLE_BUILD_NUM \
-            --template-url "https://rmitbot33.s3.ap-southeast-2.amazonaws.com/rmitbot33/0.0.33/serverless-bot-framework.template"
+            --template-url "s3://rmitbot33/rmitbot33/0.0.33/serverless-bot-framework.template"
           name: Create cloudformation stack
       - run:  
           command: | 
