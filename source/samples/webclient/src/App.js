@@ -27,25 +27,13 @@ declare var awsConfig;
 Amplify.configure(awsConfig);
 
 function App() {
-  const [authState, setAuthState] = React.useState();
-  const [user, setUser] = React.useState();
-
-  React.useEffect(() => {
-    return onAuthUIStateChange((nextAuthState, authData) => {
-      setAuthState(nextAuthState);
-      setUser(authData);
-    });
-  }, []);
-
-  return authState === AuthState.SignedIn && user ? (
+  return (
     <div className="App">
-      <AmplifyGreetings username={user.username} />
+      <AmplifyGreetings username={"RMIT USER"} />
       <Banner />
       <ChatSpace />
     </div>
-  ) : (
-    <AmplifyAuthenticator />
-  );
+  )
 }
 
 export default App;
