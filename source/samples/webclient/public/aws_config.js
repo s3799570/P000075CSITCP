@@ -30,7 +30,7 @@ var awsConfig = {
         mandatorySignIn: true,
 
         // REQUIRED - Amazon Cognito Region
-        region: "%ap-southeast-2",
+        region: "ap-southeast-2",
     },
     API: {
       endpoints: [
