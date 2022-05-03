@@ -80,7 +80,7 @@ class ChatSpace extends React.Component {
                     {this.showConversation(messages)}
                 </div>
                 <form className="textbox" id="chat-form" onSubmit={this.myFunction}>
-                    <input id='message' className="textbox--input" type='text' placeholder='Type your chatbot command here. E.g, help' ref={this.input}/>
+                    <input id='message' className="textbox--input" type='text' placeholder='Type your chatbot command here. (SEEING IF THIS CHANGES STUFF) E.g, help' ref={this.input}/>
                     <input type='submit' className="textbox--send" id="chat-send" value='Send'/>
                 </form>
             </div>
