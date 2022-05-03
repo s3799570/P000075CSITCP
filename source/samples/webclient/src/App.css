@@ -82,6 +82,14 @@
   background-color: white;
   border-radius: 10px;
 }
+
+.banner--logo img {
+  height: auto;
+  object-fit: contain;
+  width: 140px;
+  padding: 5px;
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
