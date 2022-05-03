@@ -27,7 +27,7 @@ var awsConfig = {
         userPoolWebClientId: "tb7obqd69ahiovql4ccn6oo5e",
 
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
-        mandatorySignIn: true,
+        mandatorySignIn: false,
 
         // REQUIRED - Amazon Cognito Region
         region: "ap-southeast-2",
