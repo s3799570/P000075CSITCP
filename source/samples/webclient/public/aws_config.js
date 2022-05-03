@@ -20,7 +20,7 @@ var awsConfig = {
 
         // OPTIONAL - Amazon Cognito User Pool ID
         // userPoolId: 'us-east-2_iPt7EDs4O',
-        userPoolId: "%%COGNITO_USER_POOL_ID%%",
+        userPoolId: "ap-southeast-2_OQKacayCn",
 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
         // userPoolWebClientId: '2f52skhif0qno07lvlfqu97fr4',
@@ -30,7 +30,7 @@ var awsConfig = {
         mandatorySignIn: true,
 
         // REQUIRED - Amazon Cognito Region
-        region: "%%AWS_REGION%%",
+        region: "%ap-southeast-2",
     },
     API: {
       endpoints: [
