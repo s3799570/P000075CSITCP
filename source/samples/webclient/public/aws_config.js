@@ -43,6 +43,6 @@ var awsConfig = {
     },
     language: "%%LANGUAGE_TAG%%",
     botVoice: "%%BOT_VOICE%%",
-    cognitoIdentityPool: "%%COGNITO_IDENTITY_POOL%%",
+    cognitoIdentityPool: "ap-southeast-2:c8c2a79d-ee46-404e-bb03-e0a5df41fa5",
     clientMetadata: { customUserAgent: "AwsSolution/SOL0027/1.6.0" },
 };
