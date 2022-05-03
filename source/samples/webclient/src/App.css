@@ -42,7 +42,7 @@
   align-items: center;
   /* border: 1px solid red; */
   background-color: #000;
-  overflow: visible;
+  overflow: visible; 
 }
 .banner--mic-container {
   width: 100px;
