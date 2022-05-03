@@ -24,7 +24,7 @@ var awsConfig = {
 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
         // userPoolWebClientId: '2f52skhif0qno07lvlfqu97fr4',
-        userPoolWebClientId: "%%COGNITO_USER_POOL_CLIENT_ID%%",
+        userPoolWebClientId: "tb7obqd69ahiovql4ccn6oo5e",
 
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: true,
