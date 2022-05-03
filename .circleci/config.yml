@@ -36,8 +36,12 @@ jobs:
           name: Build files
       - run:  
           command: | 
+            aws s3 rm s3://bot-cloudfrontstaticwebsitecloudfronttos3s3bucket-e0bvf7w87v1 --recursive
+          name: Remove old website build
+      - run:  
+          command: | 
             aws s3 sync ./source/samples/webclient/build s3://bot-cloudfrontstaticwebsitecloudfronttos3s3bucket-e0bvf7w87v1 --acl bucket-owner-full-control
-          name: Transfer build to S3 live bucket
+          name: Transfer new build to S3 live bucket
       #- run:  
        #   command: | 
         #    aws cloudformation create-stack \

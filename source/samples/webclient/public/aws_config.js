@@ -20,29 +20,29 @@ var awsConfig = {
 
         // OPTIONAL - Amazon Cognito User Pool ID
         // userPoolId: 'us-east-2_iPt7EDs4O',
-        userPoolId: "%%COGNITO_USER_POOL_ID%%",
+        userPoolId: "ap-southeast-2_OQKacayCn",
 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
         // userPoolWebClientId: '2f52skhif0qno07lvlfqu97fr4',
-        userPoolWebClientId: "%%COGNITO_USER_POOL_CLIENT_ID%%",
+        userPoolWebClientId: "tb7obqd69ahiovql4ccn6oo5e",
 
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: true,
 
         // REQUIRED - Amazon Cognito Region
-        region: "%%AWS_REGION%%",
+        region: "ap-southeast-2",
     },
     API: {
       endpoints: [
         {
-            name: "%%BOT_NAME%%",
-            endpoint: "%%API_URI%%"
+            name: "Joe",
+            endpoint: "https://ycqx2nkpkk.execute-api.ap-southeast-2.amazonaws.com/prod/"
 
         }
       ]
     },
-    language: "%%LANGUAGE_TAG%%",
-    botVoice: "%%BOT_VOICE%%",
-    cognitoIdentityPool: "%%COGNITO_IDENTITY_POOL%%",
+    language: "en_US",
+    botVoice: "Joey",
+    cognitoIdentityPool: "ap-southeast-2:c8c2a79d-ee46-404e-bb03-e0a5df41fa5b",
     clientMetadata: { customUserAgent: "AwsSolution/SOL0027/1.6.0" },
 };
