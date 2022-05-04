@@ -27,7 +27,7 @@ var awsConfig = {
         userPoolWebClientId: "tb7obqd69ahiovql4ccn6oo5e",
 
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
-        mandatorySignIn: false,
+        mandatorySignIn: true,
 
         // REQUIRED - Amazon Cognito Region
         region: "ap-southeast-2",
@@ -36,13 +36,13 @@ var awsConfig = {
       endpoints: [
         {
             name: "Joe",
-            endpoint: "%%API_URI%%"
+            endpoint: "https://ycqx2nkpkk.execute-api.ap-southeast-2.amazonaws.com/prod/"
 
         }
       ]
     },
-    language: "English",
+    language: "en-US",
     botVoice: "Joey",
     cognitoIdentityPool: "ap-southeast-2:c8c2a79d-ee46-404e-bb03-e0a5df41fa5b",
-    clientMetadata: { customUserAgent: "AwsSolution/SOL0027/1.6.1" },
+    clientMetadata: { customUserAgent: "AwsSolution/SOL0027/1.6.0" },
 };
