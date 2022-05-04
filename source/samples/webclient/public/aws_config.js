@@ -36,7 +36,7 @@ var awsConfig = {
       endpoints: [
         {
             name: "Joe",
-            endpoint: "https://ycqx2nkpkk.execute-api.ap-southeast-2.amazonaws.com/prod/"
+            endpoint: "%%API_URI%%"
 
         }
       ]
