@@ -44,5 +44,5 @@ var awsConfig = {
     language: "English",
     botVoice: "Joey",
     cognitoIdentityPool: "ap-southeast-2:c8c2a79d-ee46-404e-bb03-e0a5df41fa5b",
-    clientMetadata: { customUserAgent: "AwsSolution/SOL0027/1.6.0" },
+    clientMetadata: { customUserAgent: "AwsSolution/SOL0027/1.6.1" },
 };
