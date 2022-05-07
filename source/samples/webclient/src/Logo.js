@@ -1,4 +1,4 @@
-export function Logo() 
+export function Logo() {
 
   return (
     <img
