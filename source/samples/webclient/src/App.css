@@ -3,8 +3,8 @@
   background-color: #000;
 }
 
-.anchor{
-  color: #e60028;
+:root {
+    --amplify-primary-color: #e60028;
 }
 
 .App {
@@ -100,10 +100,6 @@
   display: flex;
   flex-direction: column;
   height: 90%;
-}
-
-.button {
-  background-color: #e60028;
 }
 
 /*********************/
