@@ -45,8 +45,10 @@ function App() {
       <ChatSpace />
     </div>
   ) : (
+   <div className="Login">
     <Logo />
     <AmplifyAuthenticator />
+   </div>
   );
 }
 
