@@ -1,6 +1,12 @@
 #root {
   height: 100vh;
+  background-color; #000;
 }
+
+.anchor{
+  color: #e60028;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -95,6 +101,11 @@
   flex-direction: column;
   height: 90%;
 }
+
+.button {
+  background-color: #e60028;
+}
+
 /*********************/
 /* middle chat space */
 /*********************/
