@@ -27,7 +27,7 @@ declare var awsConfig;
 class Banner extends React.Component {
     constructor(props) {
         super(props);
-
+	this.signOut = this.signOut.bind(this);
         this.myFunction = this.myFunction.bind(this);
     }
 
