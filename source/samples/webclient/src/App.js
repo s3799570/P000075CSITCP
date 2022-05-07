@@ -17,7 +17,6 @@
 
 import React from 'react';
 import './App.css';
-import { Logo } from'./Logo';
 import Banner from './components/Banner';
 import ChatSpace from './components/ChatSpace';
 import Amplify from 'aws-amplify';
@@ -45,10 +44,7 @@ function App() {
       <ChatSpace />
     </div>
   ) : (
-   <div className="Login">
-    <Logo />
-    <AmplifyAuthenticator />
-   </div>
+   <AmplifyAuthenticator />
   );
 }
 
