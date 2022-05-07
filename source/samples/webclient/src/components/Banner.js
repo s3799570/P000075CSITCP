@@ -17,6 +17,7 @@
 
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { Auth } from 'aws-amplify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../logo.png';
 import mic from '../mic_c.png';
@@ -63,10 +64,17 @@ class Banner extends React.Component {
 
           }
     }
+	
+    signOut = () => {
+        Auth.signOut()
+	.then(data => console.log(data))
+	.catch(err => console.log(err));
+    }
 
     render() {
         return (
             <div className='banner'>
+		<button onClick={this.signOut} className="signOutButton">Sign Out</button>
                 <span className='banner--mic-container' onClick={this.myFunction}> <img className='banner--mic-image' src={mic} alt={'mic'}/></span>
 				<span className='banner--logo'><img src={logo} alt={'logo'}/></span>
                 <button className='banner--language'>{awsConfig.language}</button>
