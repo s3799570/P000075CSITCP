@@ -40,7 +40,6 @@ class Banner extends React.Component {
 		<button className='banner--language'>{awsConfig.language}</button>
 		<span className='banner--logo'><img src={logo} alt={'logo'}/></span>
 		<button onClick={this.signOut} className="signOutButton">Sign Out</button>
-                <ToastContainer />
             </div>
         )
     }
