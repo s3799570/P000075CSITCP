@@ -166,6 +166,7 @@ button.signOutButton:hover {
   flex-wrap: nowrap;
   padding-top: 10px;
   padding-left: 7px;
+  padding-bottom: 5px;
   /* border: 1px solid gray; */
 }
 
