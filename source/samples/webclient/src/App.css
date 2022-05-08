@@ -159,7 +159,7 @@ button.signOutButton:hover {
 /* lower page text box */
 /***********************/
 .textbox {
-  height: 7%;
+  height: auto;
   background-color: #000;
   display: flex;
   flex-direction: row;
@@ -187,7 +187,7 @@ textarea#message {
    margin-right: 5px;
    margin-left: auto;
    width: 16%;
-   height: 80%;
+   height: 27px;
    font-size: 15px;
    background-color: #e60028;
    color: #fff;
