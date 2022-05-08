@@ -1,5 +1,4 @@
 #root {
-  height: -webkit-fill-available;
   background-color: #000;
 }
 
@@ -13,8 +12,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100vh;
 }
 
 .App-logo {
@@ -47,7 +45,7 @@
 /*********************/
 .banner {
   display: flex;
-  height: 10%;
+  height: 10vh;
   align-items: center;
   /* border: 1px solid red; */
   background-color: #000;
@@ -120,7 +118,7 @@ button.signOutButton:hover {
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 90vh;
 }
 
 /*********************/
