@@ -192,7 +192,7 @@ textarea#message {
 .textbox--send {
    margin-right: 5px;
    margin-left: auto;
-   width: 80px
+   width: 80px;
    height: 27px;
    font-size: 15px;
    background-color: #e60028;
