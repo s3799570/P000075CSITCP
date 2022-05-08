@@ -78,7 +78,7 @@ class ChatSpace extends React.Component {
     render () {
         // START Textbox Resize functions
 
-        const textareaRef = useRef(null)
+        const textareaRef = useRef(null);
 
         const handleChange = useCallback(e => {
           console.log('Changed value to: ', e.target.value)
