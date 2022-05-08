@@ -179,15 +179,15 @@ button.signOutButton:hover {
 }
 
 .textbox--send {
-  margin-right: 5px;
-  margin-left: auto;
-  width: 10%;
-  height: 75%;
-  font-size: 15px;
-  background-color: #E60028;
-  color: #FFF;
-  border-radius: 6px;
-  font-weight: 700;
+   margin-right: 5px;
+   margin-left: auto;
+   width: 16%;
+   height: 80%;
+   font-size: 15px;
+   background-color: #e60028;
+   color: #fff;
+   border-radius: 14px;
+   font-weight: 700;
 }
 
 @keyframes App-logo-spin {
