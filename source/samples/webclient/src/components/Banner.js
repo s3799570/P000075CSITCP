@@ -16,11 +16,8 @@
  */
 
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import { Auth } from 'aws-amplify';
-import 'react-toastify/dist/ReactToastify.css';
 import logo from '../logo.png';
-import mic from '../mic_c.png';
 
 declare var awsConfig;
 
@@ -28,41 +25,6 @@ class Banner extends React.Component {
     constructor(props) {
         super(props);
 	this.signOut = this.signOut.bind(this);
-        this.myFunction = this.myFunction.bind(this);
-    }
-
-    myFunction() {
-        if (!window.webkitSpeechRecognition) {
-            toast.info("Your browser doesn't support voice to speech API",
-              {
-                position: "top-center",
-                autoClose: false,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-              }
-            );
-          } else {
-            var recognition = new window.webkitSpeechRecognition();
-            recognition.lang = awsConfig.language;
-            recognition.continuous = true;
-            recognition.interimResults = false;
-            recognition.start();
-            recognition.onresult = function(event) {
-              let final_transcript = '';
-              for (let i = event.resultIndex; i < event.results.length; ++i) {
-                if (event.results[i].isFinal) {
-                  final_transcript += event.results[i][0].transcript;
-                  recognition.stop();
-                }
-              }
-              document.getElementById('message').value = final_transcript;
-              document.getElementById('chat-send').click();
-            };
-
-          }
     }
 	
     signOut = () => {
@@ -76,7 +38,6 @@ class Banner extends React.Component {
         return (
             <div className='banner'>
 		<button className='banner--language'>{awsConfig.language}</button>
-                <span className='banner--mic-container' onClick={this.myFunction}> <img className='banner--mic-image' src={mic} alt={'mic'}/></span>
 		<span className='banner--logo'><img src={logo} alt={'logo'}/></span>
 		<button onClick={this.signOut} className="signOutButton">Sign Out</button>
                 <ToastContainer />
