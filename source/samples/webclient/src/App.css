@@ -177,6 +177,7 @@ textarea#message {
   resize: none;
   margin-bottom: auto;
   margin-top: auto;
+  border-style: hidden;
 }
 
 .textbox--input {
