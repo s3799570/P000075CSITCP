@@ -75,10 +75,10 @@ class Banner extends React.Component {
     render() {
         return (
             <div className='banner'>
-		<button onClick={this.signOut} className="signOutButton">Sign Out</button>
+		<button className='banner--language'>{awsConfig.language}</button>
                 <span className='banner--mic-container' onClick={this.myFunction}> <img className='banner--mic-image' src={mic} alt={'mic'}/></span>
-				<span className='banner--logo'><img src={logo} alt={'logo'}/></span>
-                <button className='banner--language'>{awsConfig.language}</button>
+		<span className='banner--logo'><img src={logo} alt={'logo'}/></span>
+		<button onClick={this.signOut} className="signOutButton">Sign Out</button>
                 <ToastContainer />
             </div>
         )
