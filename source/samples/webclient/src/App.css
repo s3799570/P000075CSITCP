@@ -4,7 +4,9 @@
 }
 
 :root {
-    --amplify-primary-color: #e60028;
+  --amplify-primary-color: #e60028;
+  --link-hover: #eb3353;
+  --background-color-active: #d30025;
 }
 
 .App {
