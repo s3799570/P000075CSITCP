@@ -69,6 +69,7 @@ class Banner extends React.Component {
         Auth.signOut()
 	.then(data => console.log(data))
 	.catch(err => console.log(err));
+	window.location.reload(false);
     }
 
     render() {
