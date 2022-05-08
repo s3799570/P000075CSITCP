@@ -143,6 +143,11 @@ button.signOutButton:hover {
   font-size: medium;
   /* border: 1px solid red; */
 }
+
+.chat-space--message:first-child {
+  display:none;
+}
+
 .chat-space--response {
   display: block;
   background-color: #E60028;
