@@ -39,7 +39,6 @@ function App() {
 
   return authState === AuthState.SignedIn && user ? (
     <div className="App">
-      <AmplifyGreetings username={user.username} />
       <Banner />
       <ChatSpace />
     </div>
