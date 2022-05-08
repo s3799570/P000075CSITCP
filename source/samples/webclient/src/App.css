@@ -5,8 +5,8 @@
 
 :root {
   --amplify-primary-color: #e60028;
-  --link-hover: #eb3353;
-  --background-color-active: #d30025;
+  --amplify-primary-tint: #eb3353;
+  --amplify-primary-shade: #d30025;
 }
 
 .App {
