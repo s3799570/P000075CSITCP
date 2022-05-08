@@ -73,16 +73,15 @@ class ChatSpace extends React.Component {
         scrollToBottom();
     }
 
-    const MyTextarea = () => {
-      const textareaRef = useRef(null)
+    const textareaRef = useRef(null)
 
-      const handleChange = useCallback(e => {
-        console.log('Changed value to: ', e.target.value)
-      }, [])
+    const handleChange = useCallback(e => {
+      console.log('Changed value to: ', e.target.value)
+    }, [])
 
-      useEffect(() => {
-        textareaRef.current.focus()
-      }, [])
+    useEffect(() => {
+      textareaRef.current.focus()
+    }, [])
 
     render () {
         let {messages} = this.state;
