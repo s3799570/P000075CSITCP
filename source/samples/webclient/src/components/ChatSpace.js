@@ -81,7 +81,7 @@ class ChatSpace extends React.Component {
                     {this.showConversation(messages)}
                 </div>
                 <form className="textbox" id="chat-form" onSubmit={this.myFunction}>
-                    <TextareaAutosize id="message" class="textbox--input"/>
+                    <TextareaAutosize id='message' className="textbox--input" type='text' placeholder='Type a message... Try, help' ref={this.input}/>
                     <input id='message' className="textbox--input" type='text' placeholder='Type a message... Try, help' ref={this.input}/>
                     <input type='submit' className="textbox--send" id="chat-send" value='Send'/>
                 </form>
