@@ -169,6 +169,10 @@ button.signOutButton:hover {
   /* border: 1px solid gray; */
 }
 
+textarea#message {
+  box-sizing: border-box;
+}
+
 .textbox--input {
   width: 87%;
   height: 70%;
