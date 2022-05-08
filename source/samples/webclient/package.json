@@ -7,7 +7,6 @@
     "aws-amplify": "^4.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-expanding-textarea": "^2.3.5",
     "react-scripts": "^4.0.3",
     "react-toastify": "^8.0.3"
   },
