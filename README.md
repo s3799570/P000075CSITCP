@@ -41,7 +41,7 @@ Includes source code for three lambda functions, core, lex-bot, webclient-setup,
 **source/services/solution-helper**
 A Python Lambda function used as a CloudFormation custom resource for configuring Amazon S3 bucket notifications and to send anonymous metrics.
 
-## Creating a custom build
+## Creating a custom build 
 
 The solution can be deployed through the CloudFormation template available on the solution home page: [Serverless Bot Framework](https://aws.amazon.com/solutions/implementations/serverless-bot-framework/).
 To make changes to the solution, download or clone this repo, update the source code and then run the deployment/build-s3-dist.sh script to deploy the updated Lambda code to an Amazon S3 bucket in your account.

@@ -1,6 +1,14 @@
 #root {
   height: 100vh;
+  background-color: #000;
 }
+
+:root {
+  --amplify-primary-color: #e60028;
+  --amplify-primary-tint: #eb3353;
+  --amplify-primary-shade: #d30025;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -41,8 +49,8 @@
   height: 10%;
   align-items: center;
   /* border: 1px solid red; */
-  background-color: #444;
-  overflow: visible;
+  background-color: #000;
+  overflow: visible; 
 }
 .banner--mic-container {
   width: 100px;
@@ -51,9 +59,9 @@
   background-image: url("./mic_c.png") no-repeat;
   border-radius: 50%;
   border: none;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -70px;
+  float:left;
+  margin-left: 5px;
+  margin-bottom: 0px;
   overflow: visible;
   z-index: 2;
   box-shadow: 0px 3px 5px #555;
@@ -67,7 +75,7 @@
   width: 100px;
   height: 40px;
   background-color: #777;
-  margin-right: 5px;
+  margin-left: 5px;
   /* margin-left: auto; */
   border-radius: 5px;
   border: none;
@@ -75,11 +83,43 @@
   font-weight: bold;
   font-size: small;
 }
+.banner--logo {
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.banner--logo img {
+  height: auto;
+  object-fit: contain;
+  width: 140px;
+  padding: 5px;
+}
+
+button.signOutButton {
+    width: 100px;
+    height: 40px;
+    background-color: #e60028;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: small;
+}
+
+button.signOutButton:hover {
+    opacity: 0.8;
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
   height: 90%;
 }
+
 /*********************/
 /* middle chat space */
 /*********************/
@@ -91,8 +131,8 @@
 }
 .chat-space--message {
   display: block;
-  background-color: #9fc827;
-  color: #fff;
+  background-color: #fff;
+  color: #e60028;
   clear: both;
   float: left;
   padding: 10px;
@@ -104,7 +144,7 @@
 }
 .chat-space--response {
   display: block;
-  background-color: #20bbf9;
+  background-color: #E60028;
   color: #fff;
   clear: both;
   float: right;
@@ -119,28 +159,40 @@
 /* lower page text box */
 /***********************/
 .textbox {
-  height: 5%;
-  background-color: #444;
+  height: auto;
+  background-color: #000;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding-top: 5px;
-  padding-left: 5px;
+  padding-top: 10px;
+  padding-left: 7px;
   /* border: 1px solid gray; */
+}
+
+textarea#message {
+  box-sizing: border-box;
 }
 
 .textbox--input {
   width: 87%;
-  height: 60%;
-  font-size: 14px;
+  height: 70%;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  padding-left: 10px;
+  margin-right: 5px;
 }
 
 .textbox--send {
-  margin-right: 5px;
-  margin-left: auto;
-  width: 10%;
-  height: 75%;
-  font-size: 14px;
+   margin-right: 5px;
+   margin-left: auto;
+   width: 16%;
+   height: 27px;
+   font-size: 15px;
+   background-color: #e60028;
+   color: #fff;
+   border-radius: 14px;
+   font-weight: 700;
 }
 
 @keyframes App-logo-spin {

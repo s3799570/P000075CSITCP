@@ -17,6 +17,7 @@
 
 import React from 'react';
 import { API, Auth } from 'aws-amplify';
+import TextareaAutosize from 'react-textarea-autosize';
 import { extractResponse, constructRequest, scrollToBottom, textToSpeech } from '../utils/utilityFunctions';
 declare var awsConfig;
 
@@ -70,9 +71,9 @@ class ChatSpace extends React.Component {
     // after user input scroll to the bottom so that user can see the response
     componentDidUpdate() {
         scrollToBottom();
-    }
+    }   
 
-    render () {
+    render () {     
         let {messages} = this.state;
         return (
             <div className="chat-container">
@@ -80,7 +81,7 @@ class ChatSpace extends React.Component {
                     {this.showConversation(messages)}
                 </div>
                 <form className="textbox" id="chat-form" onSubmit={this.myFunction}>
-                    <input id='message' className="textbox--input" type='text' placeholder='Type your chatbot command here. E.g, help' ref={this.input}/>
+                    <TextareaAutosize maxRows={6} id='message' className="textbox--input" type='text' placeholder='Type a message... Try, help' ref={this.input}/>
                     <input type='submit' className="textbox--send" id="chat-send" value='Send'/>
                 </form>
             </div>

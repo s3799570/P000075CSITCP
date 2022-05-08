@@ -1,26 +1,67 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
-
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+version: '2.1'
+orbs:
+  aws-cli: circleci/aws-cli@3.1
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  aws-cli-build:
+    executor: aws-cli/default
+    working_directory: ~/deployment
     steps:
       - checkout
+      - aws-cli/setup:
+          profile-name: $PARAM_AWS_CLI_PROFILE_NAME
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          command: |
+            aws configure set aws_access_key_id \
+            $PARAM_AWS_CLI_ACCESS_KEY_ID \
+            --profile $PARAM_AWS_CLI_PROFILE_NAME
+          name: Configure AWS Access Key id
+      - run:
+          command: |
+            aws configure set aws_secret_access_key \
+            $PARAM_AWS_CLI_SECRET_ACCESS_KEY \
+            --profile $PARAM_AWS_CLI_PROFILE_NAME
+          name: Configure AWS Secret Access Key
+      - run:
+          command: |
+            aws configure set region $PARAM_AWS_CLI_REGION \
+            --profile $PARAM_AWS_CLI_PROFILE_NAME
+          name: Configure AWS default region
+      - run:  
+          command: | 
+            cd source/samples/webclient && npm install
+          name: install npm in folder
+      - run:  
+          command: | 
+            cd source/samples/webclient && npm run build
+          name: Build files
+      - run:  
+          command: | 
+            aws s3 rm s3://bot-cloudfrontstaticwebsitecloudfronttos3s3bucket-e0bvf7w87v1 --recursive
+          name: Remove old website build
+      - run:  
+          command: | 
+            aws s3 sync ./source/samples/webclient/build s3://bot-cloudfrontstaticwebsitecloudfronttos3s3bucket-e0bvf7w87v1 --acl bucket-owner-full-control
+          name: Transfer new build to S3 live bucket
+      #- run:  
+       #   command: | 
+        #    aws cloudformation create-stack \
+         #   --stack-name rmitbot$CIRCLE_BUILD_NUM \
+          #  --template-url "s3://rmitbot33/rmitbot33/0.0.33/serverless-bot-framework.template"
+        #  name: Create cloudformation stack
+     # - run:  
+     #     command: | 
+     #       aws s3 rb s3://rmitbot$CIRCLE_BUILD_NUM/rmitbot$CIRCLE_BUILD_NUM/0.0.$CIRCLE_BUILD_NUM --force
+     #     name: Delete temp bucket 1
+     # - run:  
+     #     command: | 
+     #       aws s3 rb s3://rmitbot$CIRCLE_BUILD_NUM-ap-southeast-2/rmitbot$CIRCLE_BUILD_NUM/0.0.$CIRCLE_BUILD_NUM --force
+     #     name: Delete temp bucket 2
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+        
+
+
 workflows:
-  say-hello-workflow:
+  aws-cli:
     jobs:
-      - say-hello
+      - aws-cli-build:
+          context: aws
