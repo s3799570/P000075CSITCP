@@ -96,6 +96,18 @@
   padding: 5px;
 }
 
+button.signOutButton {
+    width: 100px;
+    height: 40px;
+    background-color: #777;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: small;
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
