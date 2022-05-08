@@ -176,6 +176,7 @@ button.signOutButton:hover {
   font-weight: 700;
   border-radius: 20px;
   padding-left: 10px;
+  margin-right: 5px;
 }
 
 .textbox--send {
