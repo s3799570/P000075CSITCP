@@ -119,7 +119,7 @@ class ChatSpace extends React.Component {
                 </div>
                 <form className="textbox" id="chat-form" onSubmit={this.myFunction}>
                     <span className='banner--mic-container' onClick={this.myVoiceFunction}> <img className='banner--mic-image' src={mic} alt={'mic'}/></span>
-                    <TextareaAutosize maxRows={6} id='message' className="textbox--input" type='text' placeholder='Type a message... Try, help' ref={this.input}/>
+                    <TextareaAutosize maxRows={6} id='message' className="textbox--input" type='text' placeholder='Type a message...' ref={this.input}/>
                     <input type='submit' className="textbox--send" id="chat-send" value='Send'/>
                     <ToastContainer />
                 </form>
