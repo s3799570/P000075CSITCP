@@ -108,6 +108,10 @@ button.signOutButton {
     font-size: small;
 }
 
+button.signOutButton:hover {
+    opacity: 0.8;
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
