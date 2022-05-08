@@ -60,8 +60,6 @@
   border-radius: 50%;
   border: none;
   float:left;
-  margin-left: 5px;
-  margin-bottom: 0px;
   overflow: visible;
   z-index: 2;
   box-shadow: 0px 3px 5px #555;
@@ -69,7 +67,8 @@
 }
 .banner--mic-image {
   position: relative;
-  top: 20px;
+  top: 2px;
+  height: 13px;
 }
 .banner--language {
   width: 100px;
