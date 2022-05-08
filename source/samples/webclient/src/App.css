@@ -53,8 +53,8 @@
   overflow: visible; 
 }
 .banner--mic-container {
-  width: 100px;
-  height: 100px;
+  width: 24px;
+  height: 24px;
   background-color: #f8f3ee;
   background-image: url("./mic_c.png") no-repeat;
   border-radius: 50%;
