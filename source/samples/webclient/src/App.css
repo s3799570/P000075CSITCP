@@ -172,6 +172,7 @@ button.signOutButton:hover {
 
 textarea#message {
   box-sizing: border-box;
+  resize: none;
 }
 
 .textbox--input {
