@@ -88,6 +88,8 @@ class ChatSpace extends React.Component {
                   recognition.stop();
                 }
               }
+              console.log('I was triggered during render')
+              console.log(final_transcript)
               document.getElementById('message').value = final_transcript;
               document.getElementById('chat-send').click();
             };
