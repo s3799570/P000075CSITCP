@@ -20,7 +20,7 @@ import './App.css';
 import Banner from './components/Banner';
 import ChatSpace from './components/ChatSpace';
 import Amplify from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifyGreetings } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import {AuthState, onAuthUIStateChange} from "@aws-amplify/ui-components";
 
 declare var awsConfig;
