@@ -35,6 +35,7 @@ class ChatSpace extends React.Component {
         this.input = React.createRef();
         this.myFunction = this.myFunction.bind(this);
         this.myVoiceFunction = this.myVoiceFunction.bind(this);
+        this.myGreetingFunction = this.myGreetingFunction.bind(this);
     }
 
     // function to process user's input
@@ -58,6 +59,30 @@ class ChatSpace extends React.Component {
             await textToSpeech(currentState.messages[index].response);
             currentState.lastResponse = response ? response : {};
             this.setState(currentState);
+        }
+    }
+ 
+    // function to process user's input
+    async myGreetingFunction (event) {
+        event.preventDefault();{
+        let greetingIntent = 'help';
+        let newState = {messages: [...this.state.messages, {request: greetingIntent, response: '...'}]}
+        let index=this.state.messages.length;
+        let requestData = constructRequest(this.state.lastResponse, greetingIntent);
+        this.setState(newState);
+        this.input.current.value = '';
+        // call API asyncronously
+        let params = {
+            headers: { Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}` },
+            body: requestData
+        }
+        const botName = awsConfig.API.endpoints[0].name;
+        const response = await API.post(botName, 'core/', params);
+        let currentState = this.state;
+        currentState.messages[index].response = response ? extractResponse(response) : "Error!";
+        await textToSpeech(currentState.messages[index].response);
+        currentState.lastResponse = response ? response : {};
+        this.setState(currentState);
         }
     }
  
