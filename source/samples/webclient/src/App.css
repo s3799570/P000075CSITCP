@@ -175,6 +175,8 @@ button.signOutButton:hover {
 textarea#message {
   box-sizing: border-box;
   resize: none;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .textbox--input {
@@ -197,6 +199,7 @@ textarea#message {
    color: #fff;
    border-radius: 14px;
    font-weight: 700;
+   border-style: hidden;
 }
 
 @keyframes App-logo-spin {
