@@ -174,8 +174,7 @@ textarea#message {
 }
 
 .textbox--input {
-  width: 87%;
-  height: 70%;
+  width: 100%;
   font-size: 15px;
   font-weight: 700;
   border-radius: 20px;
