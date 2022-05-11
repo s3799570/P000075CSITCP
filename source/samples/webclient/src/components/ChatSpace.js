@@ -134,7 +134,7 @@ class ChatSpace extends React.Component {
     }
 
     componentDidMount() {
-        myGreetingFunction();
+        this.myGreetingFunction();
     }
 
     render () {     
