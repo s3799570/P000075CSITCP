@@ -63,8 +63,7 @@ class ChatSpace extends React.Component {
     }
  
     // function to process user's input
-    async myGreetingFunction (event) {
-        event.preventDefault();{
+    async myGreetingFunction {
         let greetingIntent = 'help';
         let newState = {messages: [...this.state.messages, {request: greetingIntent, response: '...'}]}
         let index=this.state.messages.length;
@@ -83,8 +82,7 @@ class ChatSpace extends React.Component {
         await textToSpeech(currentState.messages[index].response);
         currentState.lastResponse = response ? response : {};
         this.setState(currentState);
-        }
-    }
+     }
  
     myVoiceFunction() {
         if (!window.webkitSpeechRecognition) {
@@ -133,7 +131,11 @@ class ChatSpace extends React.Component {
     // after user input scroll to the bottom so that user can see the response
     componentDidUpdate() {
         scrollToBottom();
-    }   
+    }
+
+    componentDidMount() {
+        myGreetingFunction();
+    }
 
     render () {     
         let {messages} = this.state;
