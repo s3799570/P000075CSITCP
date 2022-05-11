@@ -63,7 +63,7 @@ class ChatSpace extends React.Component {
     }
  
     // function to process user's input
-    async myGreetingFunction {
+    async myGreetingFunction() {
         let greetingIntent = 'help';
         let newState = {messages: [...this.state.messages, {request: greetingIntent, response: '...'}]}
         let index=this.state.messages.length;
