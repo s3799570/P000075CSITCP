@@ -47,8 +47,8 @@ jobs:
             aws lex-runtime post-text \
             --region ap-southeast-2 \
             --bot-name Joe \
-            --bot-alias "TestBotAlias" \
-            --user-id default \
+            --bot-alias "\$LATEST" \
+            --user-id testcasebot123 \
             --input-text "i would like to order flowers"
           name: Test test
      # - run:  
