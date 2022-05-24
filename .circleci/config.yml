@@ -45,10 +45,10 @@ jobs:
       - run:  
           command: | 
             aws lex-runtime post-text \
-            --region p-southeast-2 \
+            --region ap-southeast-2 \
             --bot-name Joe \
             --bot-alias "TestBotAlias" \
-            --user-id UserOne \
+            --user-id alexa \
             --input-text "i would like to order flowers"
           name: Test test
      # - run:  
