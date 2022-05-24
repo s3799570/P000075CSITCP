@@ -45,9 +45,9 @@ jobs:
       - run:  
           command: | 
             aws lex-runtime post-text \
-            --region region \
-            --bot-name OrderFlowersBot \
-            --bot-alias "\$LATEST" \
+            --region p-southeast-2 \
+            --bot-name Joe \
+            --bot-alias "TestBotAlias" \
             --user-id UserOne \
             --input-text "i would like to order flowers"
           name: Test test
