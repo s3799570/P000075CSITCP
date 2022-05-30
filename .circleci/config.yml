@@ -43,26 +43,14 @@ jobs:
             aws s3 sync ./source/samples/webclient/build s3://bot-cloudfrontstaticwebsitecloudfronttos3s3bucket-e0bvf7w87v1 --acl bucket-owner-full-control
           name: Transfer new build to S3 live bucket
       - run:  
-          command: | 
-          
-          aws lexv2-runtime recognize-text \
+          command: |
+            aws lexv2-runtime recognize-text \
             --bot-id BW8DKK87PD 
             --bot-alias-id TSTALIASID 
             --locale-id en_US 
             --session-id testbot1234 
             --text "hello" | grep "Hello, how can I help you?\|Hello, how can I assist you today?\|Hi there, how can I help you today?"
           name: Test test
-     # - run:  
-     #     command: | 
-     #       aws s3 rb s3://rmitbot$CIRCLE_BUILD_NUM/rmitbot$CIRCLE_BUILD_NUM/0.0.$CIRCLE_BUILD_NUM --force
-     #     name: Delete temp bucket 1
-     # - run:  
-     #     command: | 
-     #       aws s3 rb s3://rmitbot$CIRCLE_BUILD_NUM-ap-southeast-2/rmitbot$CIRCLE_BUILD_NUM/0.0.$CIRCLE_BUILD_NUM --force
-     #     name: Delete temp bucket 2
-
-        
-
 
 workflows:
   aws-cli:
