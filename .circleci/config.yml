@@ -46,7 +46,10 @@ jobs:
           command: |
             aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "hello" | grep "Hello, how can I help you?\|Hello, how can I assist you today?\|Hi there, how can I help you today?"
           name: Test Hello Message
-
+      - run:  
+          command: |
+            aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "hello" | grep "Hello, my name is Mr Burns, I believe you have a letter for me?"
+          name: Test Failed Message
 workflows:
   aws-cli:
     jobs:
