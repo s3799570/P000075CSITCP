@@ -64,11 +64,11 @@ jobs:
           name: Test Timetable
       - run:  
          command: |
-           aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "extension" | grep "Which Course do you need an extension / special consideration? [e.g. COSC2628]"
+           aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "extension" | grep "Which Course do you need an extension / special consideration?"
          name: Test Extension 1/3
       - run:  
          command: |
-           aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "COSC2628" | grep "Which Assignment do you need the Extension / Special Consideration? [e.g. 1, 1A]"
+           aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "COSC2628" | grep "Which Assignment do you need the Extension / Special Consideration?"
          name: Test Extension 2/3
       - run:  
          command: |
