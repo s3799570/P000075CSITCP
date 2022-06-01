@@ -48,8 +48,20 @@ jobs:
           name: Test Hello Message
       - run:  
           command: |
-            aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "hello" | grep "Hello, my name is Mr Burns, I believe you have a letter for me?"
-          name: Test Failed Message
+            aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "assignment" | grep "What is the course for the assignment you want more information about?"
+          name: Test Assignment 1/3
+      - run:  
+          command: |
+            aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "COSC" | grep "What is the assignment number?"
+          name: Test Assignment 2/3
+      - run:  
+          command: |
+            aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "1" | grep "the course you requested information about does not exist"
+          name: Test Assignment 3/3
+      - run:  
+          command: |
+            aws lexv2-runtime recognize-text --bot-id BW8DKK87PD --bot-alias-id TSTALIASID --locale-id en_US --session-id testbot1234 --text "timetable" | grep "At 08:00 you have a tutorial for COSC2413 in Melbourne City at 061.04.023. At 14:30 you have a tutorial for COSC1078 in Melbourne City at 081.06.012."
+          name: Test Timetable
 workflows:
   aws-cli:
     jobs:
