@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Serverless-bot-framework Sample lambda-lex integration functionalities
+Resources:
+  BotLexLambdaDynamoDBLambdaFunction6CD4A518C3koTSoA3zMs:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: dispatcher.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: Serverless-bot-framework Sample lambda-lex integration functionalities
+      MemorySize: 128
+      Timeout: 300
+      Role: >-
+        arn:aws:iam::538644973518:role/Bot-LexLambdaDynamoDBLambdaFunctionServiceRole54A7-B7H8GWZ4GU0K
+      Environment:
+        Variables:
+          AWS_SDK_USER_AGENT: '{ "user_agent_extra": "AwsSolution/SO0027/v1.6.1" }'
+          DDB_TABLE_NAME: >-
+            Bot-OrderPizzaLambdaDynamoDBOrderPizzaOrdersDBTableDynamoTableD0BABFF6-1FSG5Y5DT48CX
+          FEEDBACK_TABLE: >-
+            Bot-LexLambdaDynamoDBLexLambdaDBTableDynamoTable115A031D-1R6SJ49BWXNEL
+          PIZZA_ORDERS_INDEX: customerId-orderTimestamp-index
+          PIZZA_ORDERS_TABLE: >-
+            Bot-OrderPizzaLambdaDynamoDBOrderPizzaOrdersDBTableDynamoTableD0BABFF6-1FSG5Y5DT48CX
+          childDirected: 'Yes'
+      Tracing: Active

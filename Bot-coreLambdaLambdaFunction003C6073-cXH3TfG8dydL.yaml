@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Serverless-bot-framework Core lambda
+Resources:
+  BotcoreLambdaLambdaFunction003C6073cXH3TfG8dydL:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs12.x
+      CodeUri: .
+      Description: Serverless-bot-framework Core lambda
+      MemorySize: 1024
+      Timeout: 300
+      Role: >-
+        arn:aws:iam::538644973518:role/Bot-coreLambdaLambdaFunctionServiceRoleA5BAF299-A69PLJC1ZN8A
+      Events:
+        Api1:
+          Type: Api
+          Properties:
+            Path: /core
+            Method: POST
+      Environment:
+        Variables:
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+          AWS_SDK_USER_AGENT: '{ "customUserAgent": "AwsSolution/SO0027/v1.6.1" }'
+          botAliasId: TSTALIASID
+          botGender: Male
+          botId: BW8DKK87PD
+          botLanguage: English
+          botName: Joe
+          forceCacheUpdate: 'false'
+      Tracing: Active
