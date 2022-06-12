@@ -5,7 +5,6 @@
 - [Architecture Overview](#architecture-overview)
 - [Deployment](#deployment)
 - [Source Code](#source-code)
-- [Creating a custom build](#additional-resources)
 
 ## Architecture Overview
 
@@ -81,7 +80,6 @@ aws s3 sync ./regional-s3-assets s3://$ARTIFACT_BUCKET-us-east-1/$SOLUTION_NAME/
 ### 4. Import our custom Lambda Functions into the solution
 
 - Still testing this
-
 
 ## Known Behavior
 
