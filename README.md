@@ -1,6 +1,4 @@
-# Serverless Bot Framework
-
-The Serverless Bot Framework is a collection of AWS services combined into a single solution that any company can use to have a scalable and high-available multi-language audiobot, chatbot and touch interface with their customers.
+# RMIT Serverless ChatBot
 
 ## On this Page
 
@@ -12,16 +10,6 @@ The Serverless Bot Framework is a collection of AWS services combined into a sin
 ## Architecture Overview
 
 ![Architecture](deployment/architecture.png)
-
-## AWS CDK Constructs
-
-[AWS CDK Solutions Constructs](https://aws.amazon.com/solutions/constructs/) make it easier to consistently create well-architected applications. All AWS Solutions Constructs are reviewed by AWS and use best practices established by the AWS Well-Architected Framework. This solution uses the following AWS CDK Constructs:
-
-- aws-cognito-apigateway-lambda.
-- aws-lambda-dynamodb.
-- aws-cloudfront-s3
-- aws-s3-lambda
-- aws-lambda-s3.
 
 ## Deployment
 
@@ -52,7 +40,6 @@ To make changes to the solution, download or clone this repo, update the source 
 - Node.js 12.x or later
 - Python 3.8 or later
 - [AWS CDK](https://aws.amazon.com/cdk/)
-- (Optional) [AccuWeather](https://developer.accuweather.com/) or [OpenWeather](https://openweathermap.org/api) API keys
 
 ### 1. Create the deployment packages
 
@@ -91,26 +78,10 @@ aws s3 sync ./regional-s3-assets s3://$ARTIFACT_BUCKET-us-east-1/$SOLUTION_NAME/
 - Get the link of the serverless-bot-framework.template uploaded to your Amazon S3 bucket.
 - Deploy the serverless bot framework to your account by launching a new AWS CloudFormation stack using the link of the serverless-bot-framework.template.
 
+### 4. Import Our Custom Lambda Functions into the application
+
+
+
 ## Known Behavior
 
-When using the 'Leave Feedback' intent, the bot only accepts one-word feedback.
-
-## Collection of operational metrics
-
-This solution collects anonymous operational metrics to help AWS improve the quality of features of the solution. For more information, including how to disable this capability, please see the [implementation guide](https://docs.aws.amazon.com/solutions/latest/serverless-bot-framework/operational-metrics.html).
-
----
-
-Copyright 2020-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.removed api and email
+Pressing enter does not submit a message.          
