@@ -29,7 +29,7 @@ Includes source code for three lambda functions, core, lex-bot, webclient-setup,
 **source/services/solution-helper**
 A Python Lambda function used as a CloudFormation custom resource for configuring Amazon S3 bucket notifications and to send anonymous metrics.
 
-## Creating a custom build 
+## Deploying our custom build
 
 The solution can be deployed through the CloudFormation template available on the solution home page: [Serverless Bot Framework](https://aws.amazon.com/solutions/implementations/serverless-bot-framework/).
 To make changes to the solution, download or clone this repo, update the source code and then run the deployment/build-s3-dist.sh script to deploy the updated Lambda code to an Amazon S3 bucket in your account.
@@ -55,7 +55,7 @@ chmod +x ./build-s3-dist.sh
 ./build-s3-dist.sh $ARTIFACT_BUCKET $SOLUTION_NAME $VERSION
 ```
 
-> **Notes**: The _build-s3-dist_ script expects the bucket name as one of its parameters, and this value should not include the region suffix. In addition to that, the version parameter will be used to tag the npm packages, and therefore should be in the [Semantic Versioning format](https://semver.org/spec/v2.0.0.html).
+> **Notes**: The _build-s3-dist_ script expects the bucket name as one of its parameters, and this value should not include the region suffix.
 
 ### 2. Create Amazon S3 Buckets
 
@@ -78,8 +78,9 @@ aws s3 sync ./regional-s3-assets s3://$ARTIFACT_BUCKET-us-east-1/$SOLUTION_NAME/
 - Get the link of the serverless-bot-framework.template uploaded to your Amazon S3 bucket.
 - Deploy the serverless bot framework to your account by launching a new AWS CloudFormation stack using the link of the serverless-bot-framework.template.
 
-### 4. Import Our Custom Lambda Functions into the application
+### 4. Import our custom Lambda Functions into the solution
 
+- Still testing this
 
 
 ## Known Behavior
